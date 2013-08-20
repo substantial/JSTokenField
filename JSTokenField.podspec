@@ -7,4 +7,5 @@ Pod::Spec.new do |s|
   s.platform = :ios, '5.0'
   s.authors  = {"James Addyman" => "https://github.com/jasarien/"}
   s.requires_arc = true
+  s.resources = ["JSTokenField/*.png"]
 end
