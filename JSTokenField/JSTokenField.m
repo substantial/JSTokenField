@@ -36,7 +36,7 @@ NSString *const JSTokenFieldNewFrameKey = @"JSTokenFieldNewFrameKey";
 NSString *const JSTokenFieldOldFrameKey = @"JSTokenFieldOldFrameKey";
 NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
 
-#define HEIGHT_PADDING 3
+#define HEIGHT_PADDING 0
 #define WIDTH_PADDING 3
 
 #define DEFAULT_HEIGHT 31
