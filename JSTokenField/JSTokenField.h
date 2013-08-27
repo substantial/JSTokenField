@@ -59,7 +59,7 @@ extern NSString *const JSDeletedTokenKey;
 
 @optional
 
-- (void)tokenField:(JSTokenField *)tokenField didAddToken:(id)value representedObject:(id)obj;
+- (void)tokenField:(JSTokenField *)tokenField didAddToken:(id)value representedObject:(id)obj tokenView:(UIView *)view;
 - (void)tokenField:(JSTokenField *)tokenField didRemoveToken:(id)value representedObject:(id)obj;
 - (BOOL)tokenField:(JSTokenField *)tokenField shouldRemoveToken:(id)value representedObject:(id)obj;
 

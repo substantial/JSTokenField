@@ -37,7 +37,7 @@ NSString *const JSTokenFieldOldFrameKey = @"JSTokenFieldOldFrameKey";
 NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
 
 #define HEIGHT_PADDING 10
-#define WIDTH_PADDING 3
+#define WIDTH_PADDING 10
 
 #define DEFAULT_HEIGHT 31
 
@@ -112,9 +112,9 @@ NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
         token.parentField = self;
 		[_tokens addObject:token];
 
-		if ([self.delegate respondsToSelector:@selector(tokenField:didAddToken:representedObject:)])
+		if ([self.delegate respondsToSelector:@selector(tokenField:didAddToken:representedObject:tokenView:)])
 		{
-			[self.delegate tokenField:self didAddToken:aString representedObject:obj];
+			[self.delegate tokenField:self didAddToken:aString representedObject:obj tokenView:token];
 		}
 
 		[self setNeedsLayout];
@@ -132,7 +132,7 @@ NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
 
 		if ([self.delegate respondsToSelector:@selector(tokenField:didAddToken:representedObject:)])
 		{
-			[self.delegate tokenField:self didAddToken:view representedObject:obj];
+			[self.delegate tokenField:self didAddToken:view representedObject:obj tokenView:view];
 		}
 
         [self setNeedsLayout];

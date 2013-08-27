@@ -1,9 +1,9 @@
 //
 //	Copyright 2011 James Addyman (JamSoft). All rights reserved.
-//	
+//
 //	Redistribution and use in source and binary forms, with or without modification, are
 //	permitted provided that the following conditions are met:
-//	
+//
 //		1. Redistributions of source code must retain the above copyright notice, this list of
 //			conditions and the following disclaimer.
 //
@@ -39,29 +39,21 @@
 
 + (JSTokenButton *)tokenWithString:(NSString *)string representedObject:(id)obj {
 	JSTokenButton *button = (JSTokenButton *)[self buttonWithType:UIButtonTypeCustom];
-    
-    [button setBackgroundImage:[[UIImage imageNamed:@"tokenNormal.png"] stretchableImageWithLeftCapWidth:14 topCapHeight:0]
-                      forState:UIControlStateNormal];
-    [button setBackgroundImage:[[UIImage imageNamed:@"tokenHighlighted.png"] stretchableImageWithLeftCapWidth:14 topCapHeight:0]
-                      forState:UIControlStateSelected];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 	[button setAdjustsImageWhenHighlighted:NO];
-	[[button titleLabel] setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
 	[[button titleLabel] setLineBreakMode:NSLineBreakByTruncatingTail];
 	[button setTitleEdgeInsets:UIEdgeInsetsMake(2, 10, 0, 10)];
-	
+
 	[button setTitle:string forState:UIControlStateNormal];
-	
+
 	[button sizeToFit];
 	CGRect frame = [button frame];
 	frame.size.width += 20;
 	frame.size.height = 25;
 	[button setFrame:frame];
-	
-    [button setValue:string];
+
+   [button setValue:string];
 	[button setRepresentedObject:obj];
-	
+
 	return button;
 }
 
@@ -72,7 +64,7 @@
     [button addSubview:view];
     [button setValue:view];
 	[button setRepresentedObject:obj];
-	
+
 	return button;
 }
 
@@ -104,7 +96,7 @@
 
 
 - (void)deleteBackward {
-    
+
     id <JSTokenFieldDelegate> delegate = _parentField.delegate;
     if ([delegate respondsToSelector:@selector(tokenField:shouldRemoveToken:representedObject:)]) {
         BOOL shouldRemove = [delegate tokenField:_parentField shouldRemoveToken:self.value representedObject:self.representedObject];
