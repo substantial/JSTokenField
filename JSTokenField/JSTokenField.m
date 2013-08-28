@@ -320,19 +320,13 @@ NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
 		token.center = tokenCenter;
 	}
 
-	if (self.layer.presentationLayer == nil) {
-		[self setFrame:selfFrame];
-        [self addMissingTokensAsSubview:_tokens];
-	}
-	else {
-        [UIView animateWithDuration:0.3
-                         animations:^{
-                             [self setFrame:selfFrame];
-                         }
-                         completion:^(BOOL finished) {
-                             [self addMissingTokensAsSubview:_tokens];
-                         }];
-	}
+    [self setFrame:selfFrame];
+    [self addMissingTokensAsSubview:_tokens];
+
+    if ([self.delegate respondsToSelector:@selector(didResize)])
+    {
+        [self.delegate didResize];
+    }
 }
 
 

@@ -72,4 +72,6 @@ extern NSString *const JSDeletedTokenKey;
 - (void)didSelectTokenButton:(JSTokenButton *)tokenButton;
 - (void)didUnselectTokenButton:(JSTokenButton *)tokenButton;
 
+- (void)didResize;
+
 @end
