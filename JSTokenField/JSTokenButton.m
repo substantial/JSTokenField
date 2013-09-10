@@ -50,12 +50,9 @@
 	frame.size.width += 20;
 	frame.size.height = 25;
 	[button setFrame:frame];
-    
-    CALayer *leftPadding = [CALayer layer];
-    leftPadding.backgroundColor = [UIColor whiteColor].CGColor;
-    leftPadding.frame = CGRectMake(0.f, 0.f, 5, button.frame.size.height);
-    [button.layer addSublayer:leftPadding];
 
+    [self setLeftPaddingFor:button];
+    
     [button setValue:string];
 	[button setRepresentedObject:obj];
 
@@ -73,6 +70,13 @@
 	return button;
 }
 
++ (void)setLeftPaddingFor:(JSTokenButton *)button
+{
+    CALayer *leftPadding = [CALayer layer];
+    leftPadding.backgroundColor = [UIColor whiteColor].CGColor;
+    leftPadding.frame = CGRectMake(0.f, 0.f, 5, button.frame.size.height);
+    [button.layer addSublayer:leftPadding];
+}
 
 - (void)dealloc {
 
