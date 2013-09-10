@@ -41,7 +41,7 @@
 	JSTokenButton *button = (JSTokenButton *)[self buttonWithType:UIButtonTypeCustom];
 	[button setAdjustsImageWhenHighlighted:NO];
 	[[button titleLabel] setLineBreakMode:NSLineBreakByTruncatingTail];
-	[button setTitleEdgeInsets:UIEdgeInsetsMake(2, 10, 0, 10)];
+	[button setTitleEdgeInsets:UIEdgeInsetsMake(2, 10, 0, 5)];
 
 	[button setTitle:string forState:UIControlStateNormal];
 
